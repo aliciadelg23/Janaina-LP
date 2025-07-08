@@ -1,0 +1,1310 @@
+/* ======================================================= */
+/* --- 1. ESTILOS GLOBAIS E PARA DESKTOP --- */
+/* ======================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eef1f5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* ======================================================= */
+/* --- CABEÇALHO E NAVEGAÇÃO --- */
+/* ======================================================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 100;
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+}
+
+.nav-desktop {
+    display: block;
+}
+
+.nav-desktop ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-desktop a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.btn-contact {
+    background-color: #2563eb;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn-contact:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-desktop {
+    display: inline-block;
+}
+
+.btn-mobile-menu,
+.nav-mobile,
+.menu-backdrop {
+    display: none;
+}
+
+/* ======================================================= */
+/* --- SEÇÃO HERO (PRINCIPAL) --- */
+/* ======================================================= */
+
+.hero {
+    position: relative;
+    min-height: 80vh;
+    background-image: url('images/ap.png');
+    background-size: cover;
+    background-position: 70% center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%;
+    height: 100%;
+    background-color: #eef1f5;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+    padding: 6rem 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2; /* Assegura que o conteúdo fique na frente */
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1e293b;
+    max-width: 500px;
+    line-height: 1.2;
+}
+
+.service-section {
+    margin-top: 2.5rem;
+}
+
+.service-section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 1rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tag {
+    background-color: #2563eb;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #1d4ed8;
+}
+
+/*
+/* ======================================================= */
+/* --- SEÇÃO VALORIZE SEU PATRIMÔNIO --- */
+/* ======================================================= */
+
+.valorize-section {
+    background-color: #3a5fcf;
+    padding: 8rem 5%;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.valorize-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.content-left {
+    flex-basis: 60%;
+    max-width: 580px;
+    position: relative;
+    padding-top: 4rem;
+}
+
+.content-left h2 {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.content-left p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.content-left .highlight {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #1e293b;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.btn-orcamento {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #fff;
+    color: #1e293b;
+    padding: 1.2rem 2.5rem;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.4;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-orcamento:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.content-right {
+    flex-basis: 35%;
+    text-align: center;
+}
+
+.name-logo {
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.roof-outline {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 70px;
+    z-index: 1;
+}
+
+.roof-outline svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ======================================================= */
+/* --- SEÇÃO EXCELÊNCIA PROFISSIONAL --- */
+/* ======================================================= */
+
+.excelencia-section {
+    background-color: #f8f9fa;
+    padding: 6rem 5%;
+    text-align: center;
+}
+
+.profile-image {
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 5px solid #fff;
+}
+
+.ribbon-wrapper {
+    margin: 2rem auto;
+    position: relative;
+    width: fit-content;
+}
+
+.ribbon-title {
+    background-color: #2563eb;
+    color: #fff;
+    font-size: 18px;
+    padding: 1rem 2.5rem;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+.ribbon-title::before,
+.ribbon-title::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    background-color: #1d4ed8;
+    z-index: -1;
+}
+
+.ribbon-title::before {
+    left: -20px;
+    transform: skewY(10deg);
+}
+
+.ribbon-title::after {
+    right: -20px;
+    transform: skewY(-10deg);
+}
+
+.subheadline {
+    font-size: 20px;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    line-height: 1.6;
+}
+
+.info-box {
+    background-color: #e9ecef;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.info-box p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.info-box .crecisp {
+    text-align: center;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
+
+/* ======================================================= */
+/* --- SEÇÃO POR QUE CONTAR COMIGO? --- */
+/* ======================================================= */
+
+.porque-section {
+    background-color: #fff;
+    padding: 6rem 5%;
+}
+
+.porque-section .container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.porque-left {
+    flex: 1.5;
+}
+
+.porque-left h3 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.checklist {
+    list-style: none;
+    padding-left: 0;
+}
+
+.checklist li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 1rem;
+    padding-left: 25px;
+    position: relative;
+}
+
+.checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    background-color: #ced4da;
+}
+
+.porque-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.yellow-box {
+    position: relative;
+    width: 280px;
+    height: 320px;
+}
+
+.yellow-box-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    stroke: #ffc107;
+    stroke-width: 3px;
+    fill: rgba(255, 193, 7, 0.05);
+}
+
+.yellow-box-text {
+    position: relative;
+    z-index: 2;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    line-height: 1.5;
+}
+
+/* ======================================================= */
+/* --- SEÇÃO LAUDOS E FINALIDADES --- */
+/* ======================================================= */
+
+.laudos-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.laudos-top {
+    background-color: #3867D6;
+    color: #fff;
+    padding: 6rem 0;
+    position: relative;
+}
+
+.laudos-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.laudos-top-content {
+    flex-grow: 1;
+    max-width: 750px;
+}
+
+.laudos-top-content h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.laudos-top-content h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.laudos-top-content p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.laudos-top-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    margin-left: auto;
+}
+
+.laudos-top-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.laudos-bottom {
+    padding: 5rem 0;
+    background-color: #fff;
+}
+
+.laudos-bottom h3 {
+    font-size: 26px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.laudos-bottom ul {
+    list-style-position: inside;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+}
+
+.laudos-bottom li {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.btn-valorize {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #3867D6;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 5px 0 #2d52a8;
+    transition: all 0.2s ease;
+}
+
+.btn-valorize:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 #2d52a8;
+}
+
+.btn-valorize:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 #2d52a8;
+}
+
+/* ======================================================= */
+/* --- SEÇÃO CONFIABILIDADE E VALIDADE --- */
+/* ======================================================= */
+
+.confiabilidade-section {
+    position: relative;
+    padding: 6rem 5%;
+    color: #fff;
+    background-image: url('images/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.confiabilidade-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 20, 30, 0.7);
+    z-index: 1;
+}
+
+.confiabilidade-section .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.confiabilidade-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.confiabilidade-header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.header-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-box p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.arrow-icon {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.arrow-icon img {
+    max-width: 100%;
+    height: auto;
+}
+
+.feature-item p {
+    font-size: 16px;
+    line-height: 1.7;
+    padding-top: 1rem;
+}
+
+.feature-item:nth-child(2) .arrow-icon img,
+.feature-item:nth-child(4) .arrow-icon img {
+    transform: scaleX(-1);
+}
+
+/* ======================================================= */
+/* --- ÍCONE FLUTUANTE DO WHATSAPP --- */
+/* ======================================================= */
+
+.whatsapp-fab {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-fab:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-fab img {
+    width: 35px;
+    height: 35px;
+}
+
+
+/* ======================================================= */
+/* --- ESTILOS DA SEÇÃO NBR E EXPERTISE --- */
+/* ======================================================= */
+
+.expertise-section {
+    padding: 6rem 5%;
+    background-color: #f8f9fa; /* Cor de fundo clara */
+}
+
+.expertise-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Wrapper para criar o efeito de borda/sombra deslocada */
+.info-card-wrapper {
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+/* A borda preta deslocada, criada com um pseudo-elemento */
+.info-card-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #000;
+    z-index: 1;
+}
+
+.info-card {
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    border: 3px solid #000;
+    padding: 2rem;
+}
+
+.info-card p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    text-align: center;
+}
+
+/* Estilos específicos para a caixa azul */
+.info-card.blue-card {
+    background-color: #3867D6; /* Seu azul */
+    color: #fff;
+}
+
+.blue-card h3 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.situations-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    gap: 1.5rem;
+}
+
+.situation-item {
+    width: 130px;
+    height: 130px;
+    border: 2px solid #FFD801; /* Seu amarelo */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.situation-item:hover {
+    background-color: #FFD801;
+    color: #000;
+}
+
+/* Estilos para o botão e seu wrapper */
+.button-wrapper {
+    margin: 6rem auto 0 auto;
+    width: fit-content;
+}
+
+.button-wrapper .btn-solicitar {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    background-color: #FFD801; /* Seu amarelo */
+    color: #000;
+    border: 3px solid #000;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.button-wrapper .btn-solicitar:hover {
+    transform: translate(-4px, -4px);
+}
+
+
+/* ======================================================= */
+/* --- ESTILOS DA SEÇÃO ETAPAS DA AVALIAÇÃO --- */
+/* ======================================================= */
+
+.etapas-section {
+    background-color: #FFFBEB; /* Fundo amarelo claro */
+    padding: 5rem 5%;
+    border-top: 3px solid #000;
+    border-bottom: 3px solid #000;
+}
+
+.etapas-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.etapa-coluna {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.etapa-coluna h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.etapa-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1; /* Faz os cards terem a mesma altura */
+}
+
+.etapa-icone {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+}
+
+.etapa-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+    max-width: 300px; /* Limita a largura do texto para melhor leitura */
+}
+
+/* ======================================================= */
+/* --- ESTILOS DO RODAPÉ (FOOTER) --- */
+/* ======================================================= */
+
+.main-footer {
+    position: relative;
+    background-color: #eef1f5; /* Cor de fundo do lado esquerdo (claro) */
+    color: #fff;
+    padding: 4rem 5%;
+    margin-top: 5rem;
+    /* <-- ADICIONADO: Espaçamento acima do rodapé */
+}
+
+/* Camada azul com o corte diagonal */
+.main-footer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3867D6; /* Seu azul */
+    clip-path: polygon(40% 0, 100% 0, 100% 100%, 25% 100%);
+}
+
+.main-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    /* CORREÇÃO: Alinhamos os itens ao topo em vez de ao centro */
+    align-items: flex-start;
+}
+.footer-logo-side {
+    flex: 1; /* Diz para ocupar o espaço disponível igualmente */
+}
+
+.footer-logo {
+    max-width: 200px; /* Ajuste o tamanho do logo conforme necessário */
+    height: auto;
+}
+
+.footer-contact-side {
+    flex: 1; /* Diz para ocupar o espaço disponível igualmente */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+.contact-info {
+    display: flex;
+    /* CORREÇÃO: Muda a direção para empilhar verticalmente */
+    flex-direction: column; 
+    /* Alinha o texto à direita, para combinar com o botão abaixo */
+    align-items: flex-end; 
+    /* Ajusta o espaço entre as linhas */
+    gap: 0.5rem; 
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Wrapper para o efeito de borda no botão */
+.footer-button-wrapper {
+    position: relative;
+}
+
+.footer-button-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #000;
+}
+
+.btn-footer-contact {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    background-color: #eef1f5;
+    color: #000;
+    border: 2px solid #000;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.btn-footer-contact:hover {
+    transform: translate(-3px, -3px);
+}
+/* ======================================================= */
+/* --- 2. AJUSTES PARA MOBILE (Telas <= 768px) --- */
+/* ======================================================= */
+
+@media (max-width: 768px) {
+
+    /* --- Ajustes no Menu Mobile --- */
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    .nav-desktop,
+    .btn-desktop {
+        display: none;
+    }
+
+    .btn-mobile-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        z-index: 1001;
+    }
+
+    .menu-backdrop {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+    }
+
+    .menu-backdrop.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-mobile {
+        display: flex;
+        flex-direction: column;
+        padding: 6rem 2rem 2rem;
+        gap: 1.5rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 280px;
+        max-width: 80vw;
+        background-color: #334155;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .nav-mobile.active {
+        transform: translateX(0);
+    }
+
+    .nav-mobile a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 0.5rem 0;
+    }
+
+    .nav-mobile .btn-contact {
+        margin-top: 1rem;
+    }
+
+    .hamburger-line {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 3px;
+        transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+    }
+
+    .btn-mobile-menu.active .hamburger-line {
+        background-color: #fff;
+    }
+
+    .btn-mobile-menu.active .hamburger-line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .btn-mobile-menu.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .btn-mobile-menu.active .hamburger-line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* --- Ajustes no Hero --- */
+    .hero {
+        min-height: auto;
+        background-image: none;
+    }
+
+    .hero-content {
+        position: static;
+        width: 100%;
+        height: auto;
+        clip-path: none;
+        padding: 3rem 1.5rem;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+        max-width: 100%;
+    }
+
+    .service-section {
+        margin-top: 2rem;
+    }
+
+    .service-section h2 {
+        font-size: 18px;
+    }
+
+    .tags {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .tag {
+        width: 100%;
+        max-width: 350px;
+        text-align: center;
+    }
+
+    /* --- Ajustes na Seção Valorize Patrimônio --- */
+    .valorize-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .valorize-section .container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .content-left {
+        max-width: 100%;
+        padding-top: 3rem;
+        text-align: center;
+    }
+
+    .content-left p {
+        text-align: center;
+    }
+
+    .name-logo {
+        font-size: 40px;
+    }
+
+    .roof-outline {
+        height: 50px;
+    }
+
+    /* --- Ajustes na Seção Excelência --- */
+    .excelencia-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .profile-image {
+        width: 280px;
+        height: 280px;
+    }
+
+    .ribbon-title {
+        font-size: 16px;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .ribbon-title::before {
+        left: -15px;
+        width: 15px;
+    }
+
+    .ribbon-title::after {
+        right: -15px;
+        width: 15px;
+    }
+
+    .subheadline {
+        font-size: 18px;
+    }
+
+    /* --- Ajustes na Seção Por Que Contar Comigo? --- */
+    .porque-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .porque-section .container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .porque-left h3 {
+        text-align: center;
+    }
+
+    .yellow-box {
+        width: 250px;
+        height: 280px;
+    }
+
+    /* --- Ajustes na Seção Laudos e Finalidades --- */
+    .laudos-top {
+        padding: 4rem 1.5rem;
+    }
+
+    .laudos-top .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .laudos-top-content h1 {
+        font-size: 24px;
+    }
+
+    .laudos-top-content h2 {
+        font-size: 18px;
+    }
+
+    .laudos-top-icon {
+        margin-top: 2rem;
+        width: 60px;
+        height: 60px;
+        margin-left: 0; /* Centraliza o ícone no mobile */
+    }
+
+    .laudos-bottom {
+        padding: 4rem 1.5rem;
+    }
+
+    .laudos-bottom h3 {
+        font-size: 22px;
+    }
+
+    .laudos-bottom li {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    /* --- Ajustes na Seção Confiabilidade --- */
+    .confiabilidade-section {
+        padding: 4rem 1.5rem;
+        background-attachment: scroll;
+    }
+
+    .confiabilidade-header h1 {
+        font-size: 26px;
+    }
+
+    .header-box p {
+        font-size: 16px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .arrow-icon {
+        width: 40px;
+        height: 40px;
+        transform: rotate(90deg);
+    }
+    
+    /* Remove a inversão da seta no mobile */
+    .feature-item:nth-child(2) .arrow-icon img,
+    .feature-item:nth-child(4) .arrow-icon img {
+        transform: none;
+    }
+
+    /* Adicionar DENTRO de @media (max-width: 768px) { ... } */
+
+    /* --- Ajustes na Seção NBR e Expertise --- */
+    .expertise-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .info-card-wrapper::before {
+        top: 6px;
+        left: 6px;
+    }
+
+    .info-card p {
+        font-size: 16px;
+    }
+
+    .blue-card h3 {
+        font-size: 18px;
+    }
+
+    .situations-container {
+        gap: 1rem;
+    }
+
+    .situation-item {
+        width: 110px;
+        height: 110px;
+        font-size: 12px;
+    }
+
+    .button-wrapper {
+        margin-top: 4rem;
+    }
+
+    /* Adicionar DENTRO de @media (max-width: 768px) { ... } */
+
+    /* --- Ajustes na Seção Etapas da Avaliação --- */
+    .etapas-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .etapas-section .container {
+        flex-direction: column; /* Empilha as colunas */
+        gap: 3rem;
+    }
+
+    .etapa-coluna h2 {
+        font-size: 22px;
+    }
+
+    /* Adicionar DENTRO de @media (max-width: 768px) { ... } */
+
+    /* --- Ajustes no Rodapé --- */
+    .main-footer {
+        padding: 4rem 1.5rem;
+    }
+
+    /* Ajusta ou remove o corte diagonal no mobile */
+    .main-footer::after {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .main-footer .container {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .footer-logo-side, .footer-contact-side {
+        flex-basis: auto;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
+
