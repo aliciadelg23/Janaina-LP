@@ -1,280 +1,1315 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Janaína Pereira - Avaliação Imobiliária</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body id="home">
+/* ======================================================= */
+/* --- 1. ESTILOS GLOBAIS E PARA DESKTOP --- */
+/* ======================================================= */
 
-    <div class="menu-backdrop"></div>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
 
-    <header class="navbar">
-        <a href="#home" class="logo">
-            <img src="images/logo-1.png" alt="Logo do site">
-        </a>
-        
-        <nav class="nav-desktop">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#">Clientes</a></li>
-            </ul>
-        </nav>
-        
-        <a href="https://wa.me/5511973097621" target="_blank" class="btn-contact btn-desktop">Fale Conosco</a>
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eef1f5;
+    color: #333;
+    overflow-x: hidden;
+}
 
-        <button class="btn-mobile-menu" aria-label="Abrir menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-    </header>
+/* ======================================================= */
+/* --- CABEÇALHO E NAVEGAÇÃO --- */
+/* ======================================================= */
 
-    <div class="nav-mobile">
-        <a href="#home">Home</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#">Clientes</a>
-        <a href="https://wa.me/5511973097621" target="_blank" class="btn-contact">Fale Conosco</a>
-    </div>
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 100;
+}
 
-    <main class="hero">
-        <div class="hero-content">
-            <h1>Avaliação imobiliária judicial e extrajudicial</h1>
-            <div class="service-section">
-                <h2>Atuação Judicial</h2>
-                <div class="tags">
-                    <span class="tag">Avaliação de Imóveis em Ações Judiciais</span>
-                    <span class="tag">Laudo Técnico de Avaliação Judicial</span>
-                    <span class="tag">Perícia Judicial</span>
-                </div>
-            </div>
-            <div class="service-section">
-                <h2>Atuação Extrajudicial</h2>
-                <div class="tags">
-                    <span class="tag">Avaliação de Imóveis em Ações Judiciais</span>
-                    <span class="tag">Laudo Técnico de Avaliação Judicial</span>
-                    <span class="tag">Perícia Judicial</span>
-                </div>
-            </div>
-        </div>
-    </main>
-    <section class="valorize-section">
-        <div class="container">
-            <div class="content-left">
-                <div class="roof-outline">
-                    <svg viewBox="0 0 100 30" preserveAspectRatio="none">
-                        <path d="M2,30 L50,2 L98,30" stroke="white" stroke-width="4" fill="none" vector-effect="non-scaling-stroke"></path>
-                    </svg>
-                </div>
-                <h2>Valorize seu patrimônio!</h2>
-                <p>
-                    Seu <span class="highlight">imóvel</span> ou <span class="highlight">terreno</span> merece uma avaliação <span class="highlight">exata</span>, <span class="highlight">confiável</span> e realizada com <span class="highlight">máxima</span> <span class="highlight">excelência</span>. Entendendo o quão valioso é o seu patrimônio, ofereço um processo de avaliação sério, transparente e totalmente focado em resultados reais, para que você possa tomar decisões com total confiança.
-                </p>
-                <a href="#" class="btn-orcamento">
-                    Solicite<br>um Orçamento
-                </a>
-            </div>
-            <div class="content-right">
-                <div class="name-logo">
-                    JANAINA<br>PEREIRA
-                </div>
-            </div>
-        </div>
-    </section>
+.logo img {
+    height: 80px;
+    width: auto;
+}
 
-    <section id="sobre" class="excelencia-section">
-        <div class="container">
-            <img src="images/janaina.png" alt="Foto de Janaína Pereira" class="profile-image">
-            <div class="ribbon-wrapper">
-                <h2 class="ribbon-title">Excelência profissional em todos os aspectos</h2>
-            </div>
-            <p class="subheadline">
-                Entre em contato comigo, especialista na área, e descubra o<br>verdadeiro valor do seu imóvel.
-            </p>
-            <div class="info-box">
-                <p>Formada em Administração e com MBA em Gestão & Transformação Digital pela USP, tenho mais de 10 anos de experiência no mercado financeiro e, desde 2017, atuo no setor imobiliário, especializada em perícias e avaliações imobiliárias.</p>
-                <p>Altamente qualificada para realizar avaliações em todo o território nacional, minha abordagem é orientada por ética, segurança e precisão, sempre com foco em resultados transparentes, responsáveis e conformes às normas e regulamentações do setor.</p>
-                <p class="crecisp">CRECISP 158283-F – CNAI 21064</p>
-            </div>
-        </div>
-    </section>
+.nav-desktop {
+    display: block;
+}
 
-    <section class="porque-section">
-        <div class="container">
-            <div class="porque-left">
-                <h3>Por que contar comigo?</h3>
-                <ul class="checklist">
-                    <li>Sou perita registrada nos Tribunais de Justiça.</li>
-                    <li>Emito laudos com validade jurídica e rigor técnico comprovado.</li>
-                    <li>Atendo em todo o Brasil com agilidade, sigilo e transparência.</li>
-                    <li>Sigo integralmente as normas ABNT / NBR 14.653.</li>
-                    <li>Ofereço, quando necessário, assistência técnica judicial.</li>
-                    <li>Trabalho com honorários acessíveis e condições de pagamento flexíveis.</li>
-                </ul>
-            </div>
-            <div class="porque-right">
-                <div class="yellow-box">
-                    <svg class="yellow-box-shape" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M50,2 L98,25 L98,75 L50,98 L2,75 L2,25 Z"></path>
-                    </svg>
-                    <div class="yellow-box-text">
-                        EXPERIÊNCIA<br>
-                        QUALIFICAÇÃO ÉTICA E<br>
-                        RESPONSABILIDADE
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.nav-desktop ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-desktop a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.btn-contact {
+    background-color: #2563eb;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn-contact:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-desktop {
+    display: inline-block;
+}
+
+.btn-mobile-menu,
+.nav-mobile,
+.menu-backdrop {
+    display: none;
+}
+
+/* ======================================================= */
+/* --- SEÇÃO HERO (PRINCIPAL) --- */
+/* ======================================================= */
+
+.hero {
+    position: relative;
+    min-height: 80vh;
+    background-image: url('images/ap.png');
+    background-size: cover;
+    background-position: 70% center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%;
+    height: 100%;
+    background-color: #eef1f5;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+    padding: 6rem 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2; /* Assegura que o conteúdo fique na frente */
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1e293b;
+    max-width: 500px;
+    line-height: 1.2;
+}
+
+.service-section {
+    margin-top: 2.5rem;
+}
+
+.service-section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 1rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tag {
+    background-color: #2563eb;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #1d4ed8;
+}
+
+/*
+/* ======================================================= */
+/* --- SEÇÃO VALORIZE SEU PATRIMÔNIO --- */
+/* ======================================================= */
+
+.valorize-section {
+    background-color: #3a5fcf;
+    padding: 8rem 5%;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.valorize-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.content-left {
+    flex-basis: 60%;
+    max-width: 580px;
+    position: relative;
+    padding-top: 4rem;
+}
+
+.content-left h2 {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.content-left p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.content-left .highlight {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #1e293b;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.btn-orcamento {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #fff;
+    color: #1e293b;
+    padding: 1.2rem 2.5rem;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.4;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-orcamento:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.content-right {
+    flex-basis: 35%;
+    text-align: center;
+}
+
+.name-logo {
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.roof-outline {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 70px;
+    z-index: 1;
+}
+
+.roof-outline svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ======================================================= */
+/* --- SEÇÃO EXCELÊNCIA PROFISSIONAL --- */
+/* ======================================================= */
+
+.excelencia-section {
+    background-color: #f8f9fa;
+    padding: 6rem 5%;
+    text-align: center;
+}
+
+.profile-image {
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 5px solid #fff;
+}
+
+.ribbon-wrapper {
+    margin: 2rem auto;
+    position: relative;
+    width: fit-content;
+}
+
+.ribbon-title {
+    background-color: #2563eb;
+    color: #fff;
+    font-size: 18px;
+    padding: 1rem 2.5rem;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+.ribbon-title::before,
+.ribbon-title::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    background-color: #1d4ed8;
+    z-index: -1;
+}
+
+.ribbon-title::before {
+    left: -20px;
+    transform: skewY(10deg);
+}
+
+.ribbon-title::after {
+    right: -20px;
+    transform: skewY(-10deg);
+}
+
+.subheadline {
+    font-size: 20px;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    line-height: 1.6;
+}
+
+.info-box {
+    background-color: #e9ecef;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.info-box p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.info-box .crecisp {
+    text-align: center;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
+
+/* ======================================================= */
+/* --- SEÇÃO POR QUE CONTAR COMIGO? --- */
+/* ======================================================= */
+
+.porque-section {
+    background-color: #fff;
+    padding: 6rem 5%;
+}
+
+.porque-section .container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.porque-left {
+    flex: 1.5;
+}
+
+.porque-left h3 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.checklist {
+    list-style: none;
+    padding-left: 0;
+}
+
+.checklist li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 1rem;
+    padding-left: 25px;
+    position: relative;
+}
+
+.checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    background-color: #ced4da;
+}
+
+.porque-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.yellow-box {
+    position: relative;
+    width: 280px;
+    height: 320px;
+}
+
+.yellow-box-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    stroke: #ffc107;
+    stroke-width: 3px;
+    fill: rgba(255, 193, 7, 0.05);
+}
+
+.yellow-box-text {
+    position: relative;
+    z-index: 2;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    line-height: 1.5;
+}
+
+/* ======================================================= */
+/* --- SEÇÃO LAUDOS E FINALIDADES --- */
+/* ======================================================= */
+
+.laudos-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.laudos-top {
+    background-color: #3867D6;
+    color: #fff;
+    padding: 6rem 0;
+    position: relative;
+}
+
+.laudos-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.laudos-top-content {
+    flex-grow: 1;
+    max-width: 750px;
+}
+
+.laudos-top-content h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.laudos-top-content h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.laudos-top-content p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.laudos-top-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    margin-left: auto;
+}
+
+.laudos-top-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.laudos-bottom {
+    padding: 5rem 0;
+    background-color: #fff;
+}
+
+.laudos-bottom h3 {
+    font-size: 26px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.laudos-bottom ul {
+    list-style-position: inside;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+}
+
+.laudos-bottom li {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.btn-valorize {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #3867D6;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 5px 0 #2d52a8;
+    transition: all 0.2s ease;
+}
+
+.btn-valorize:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 #2d52a8;
+}
+
+.btn-valorize:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 #2d52a8;
+}
+
+/* ======================================================= */
+/* --- SEÇÃO CONFIABILIDADE E VALIDADE --- */
+/* ======================================================= */
+
+.confiabilidade-section {
+    position: relative;
+    padding: 6rem 5%;
+    color: #fff;
+    background-image: url('images/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.confiabilidade-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 20, 30, 0.7);
+    z-index: 1;
+}
+
+.confiabilidade-section .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.confiabilidade-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.confiabilidade-header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.header-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-box p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.arrow-icon {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.arrow-icon img {
+    max-width: 100%;
+    height: auto;
+}
+
+.feature-item p {
+    font-size: 16px;
+    line-height: 1.7;
+    padding-top: 1rem;
+}
+
+.feature-item:nth-child(2) .arrow-icon img,
+.feature-item:nth-child(4) .arrow-icon img {
+    transform: scaleX(-1);
+}
+
+/* ======================================================= */
+/* --- ÍCONE FLUTUANTE DO WHATSAPP --- */
+/* ======================================================= */
+
+.whatsapp-fab {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-fab:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-fab img {
+    width: 35px;
+    height: 35px;
+}
+
+
+/* ======================================================= */
+/* --- ESTILOS DA SEÇÃO NBR E EXPERTISE --- */
+/* ======================================================= */
+
+.expertise-section {
+    padding: 6rem 5%;
+    background-color: #f8f9fa; /* Cor de fundo clara */
+}
+
+.expertise-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Wrapper para criar o efeito de borda/sombra deslocada */
+.info-card-wrapper {
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+/* A borda preta deslocada, criada com um pseudo-elemento */
+.info-card-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #000;
+    z-index: 1;
+}
+
+.info-card {
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    border: 3px solid #000;
+    padding: 2rem;
+}
+
+.info-card p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    text-align: center;
+}
+
+/* Estilos específicos para a caixa azul */
+.info-card.blue-card {
+    background-color: #3867D6; /* Seu azul */
+    color: #fff;
+}
+
+.blue-card h3 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.situations-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    gap: 1.5rem;
+}
+
+.situation-item {
+    width: 130px;
+    height: 130px;
+    border: 2px solid #FFD801; /* Seu amarelo */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.situation-item:hover {
+    background-color: #FFD801;
+    color: #000;
+}
+
+/* Estilos para o botão e seu wrapper */
+.button-wrapper {
+    margin: 6rem auto 0 auto;
+    width: fit-content;
+}
+
+.button-wrapper .btn-solicitar {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    background-color: #FFD801; /* Seu amarelo */
+    color: #000;
+    border: 3px solid #000;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.button-wrapper .btn-solicitar:hover {
+    transform: translate(-4px, -4px);
+}
+
+
+/* ======================================================= */
+/* --- ESTILOS DA SEÇÃO ETAPAS DA AVALIAÇÃO --- */
+/* ======================================================= */
+
+.etapas-section {
+    background-color: #FFFBEB; /* Fundo amarelo claro */
+    padding: 5rem 5%;
+    border-top: 3px solid #000;
+    border-bottom: 3px solid #000;
+}
+
+.etapas-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.etapa-coluna {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.etapa-coluna h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.etapa-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1; /* Faz os cards terem a mesma altura */
+}
+
+.etapa-icone {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+}
+
+.etapa-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+    max-width: 300px; /* Limita a largura do texto para melhor leitura */
+}
+
+/* ======================================================= */
+/* --- ESTILOS DO RODAPÉ (FOOTER) --- */
+/* ======================================================= */
+
+.main-footer {
+    position: relative;
+    background-color: #eef1f5; /* Cor de fundo do lado esquerdo (claro) */
+    color: #fff;
+    padding: 4rem 5%;
+    margin-top: 5rem;
+    /* <-- ADICIONADO: Espaçamento acima do rodapé */
+}
+
+/* Camada azul com o corte diagonal */
+.main-footer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3867D6; /* Seu azul */
+    clip-path: polygon(40% 0, 100% 0, 100% 100%, 25% 100%);
+}
+
+.main-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    /* CORREÇÃO: Alinhamos os itens ao topo em vez de ao centro */
+    align-items: flex-start;
+}
+.footer-logo-side {
+    flex: 1; /* Diz para ocupar o espaço disponível igualmente */
+}
+
+.footer-logo {
+    max-width: 200px; /* Ajuste o tamanho do logo conforme necessário */
+    height: auto;
+}
+
+.footer-contact-side {
+    flex: 1; /* Diz para ocupar o espaço disponível igualmente */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+.contact-info {
+    display: flex;
+    /* CORREÇÃO: Muda a direção para empilhar verticalmente */
+    flex-direction: column; 
+    /* Alinha o texto à direita, para combinar com o botão abaixo */
+    align-items: flex-end; 
+    /* Ajusta o espaço entre as linhas */
+    gap: 0.5rem; 
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Wrapper para o efeito de borda no botão */
+.footer-button-wrapper {
+    position: relative;
+}
+
+.footer-button-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #000;
+}
+
+.btn-footer-contact {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    background-color: #eef1f5;
+    color: #000;
+    border: 2px solid #000;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.btn-footer-contact:hover {
+    transform: translate(-3px, -3px);
+}
+/* ======================================================= */
+/* --- 2. AJUSTES PARA MOBILE (Telas <= 768px) --- */
+/* ======================================================= */
+
+@media (max-width: 768px) {
+
+    /* --- Ajustes no Menu Mobile --- */
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    .nav-desktop,
+    .btn-desktop {
+        display: none;
+    }
+
+    .btn-mobile-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        z-index: 1001;
+    }
+
+    .menu-backdrop {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+    }
+
+    .menu-backdrop.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+   /* Dentro de @media (max-width: 768px) */
+
+.nav-mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 2rem 2rem;
+    gap: 1.5rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 280px;
+    max-width: 80vw;
+    background-color: #3867D6; /* <-- COR AZUL ATUALIZADA */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+    .nav-mobile.active {
+        transform: translateX(0);
+    }
+
+    .nav-mobile a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 0.5rem 0;
+    }
+
+    .nav-mobile .btn-contact {
+        margin-top: 1rem;
+    }
+
+    .hamburger-line {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 3px;
+        transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+    }
+
+    .btn-mobile-menu.active .hamburger-line {
+        background-color: #fff;
+    }
+
+    .btn-mobile-menu.active .hamburger-line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .btn-mobile-menu.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .btn-mobile-menu.active .hamburger-line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* --- Ajustes no Hero --- */
+    .hero {
+        min-height: auto;
+        background-image: none;
+    }
+
+    .hero-content {
+        position: static;
+        width: 100%;
+        height: auto;
+        clip-path: none;
+        padding: 3rem 1.5rem;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+        max-width: 100%;
+    }
+
+    .service-section {
+        margin-top: 2rem;
+    }
+
+    .service-section h2 {
+        font-size: 18px;
+    }
+
+    .tags {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .tag {
+        width: 100%;
+        max-width: 350px;
+        text-align: center;
+    }
+
+    /* --- Ajustes na Seção Valorize Patrimônio --- */
+    .valorize-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .valorize-section .container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .content-left {
+        max-width: 100%;
+        padding-top: 3rem;
+        text-align: center;
+    }
+
+    .content-left p {
+        text-align: center;
+    }
+
+    .name-logo {
+        font-size: 40px;
+    }
+
+    .roof-outline {
+        height: 50px;
+    }
+
+    /* --- Ajustes na Seção Excelência --- */
+    .excelencia-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .profile-image {
+        width: 280px;
+        height: 280px;
+    }
+
+    .ribbon-title {
+        font-size: 16px;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .ribbon-title::before {
+        left: -15px;
+        width: 15px;
+    }
+
+    .ribbon-title::after {
+        right: -15px;
+        width: 15px;
+    }
+
+    .subheadline {
+        font-size: 18px;
+    }
+
+    /* --- Ajustes na Seção Por Que Contar Comigo? --- */
+    .porque-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .porque-section .container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .porque-left h3 {
+        text-align: center;
+    }
+
+    .yellow-box {
+        width: 250px;
+        height: 280px;
+    }
+
+    /* --- Ajustes na Seção Laudos e Finalidades --- */
+    .laudos-top {
+        padding: 4rem 1.5rem;
+    }
+
+    .laudos-top .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .laudos-top-content h1 {
+        font-size: 24px;
+    }
+
+    .laudos-top-content h2 {
+        font-size: 18px;
+    }
+
+    .laudos-top-icon {
+        margin-top: 2rem;
+        width: 60px;
+        height: 60px;
+        margin-left: 0; /* Centraliza o ícone no mobile */
+    }
+
+    .laudos-bottom {
+        padding: 4rem 1.5rem;
+    }
+
+    .laudos-bottom h3 {
+        font-size: 22px;
+    }
+
+    .laudos-bottom li {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    /* --- Ajustes na Seção Confiabilidade --- */
+    .confiabilidade-section {
+        padding: 4rem 1.5rem;
+        background-attachment: scroll;
+    }
+
+    .confiabilidade-header h1 {
+        font-size: 26px;
+    }
+
+    .header-box p {
+        font-size: 16px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .arrow-icon {
+        width: 40px;
+        height: 40px;
+        transform: rotate(90deg);
+    }
     
-    <section id="servicos" class="laudos-section">
-        <div class="laudos-top">
-            <div class="container">
-                <div class="laudos-top-content">
-                    <h1>Avaliação de Imóveis Judiciais e Extrajudiciais com Precisão e Confiabilidade</h1>
-                    <h2>Soluções Técnicas para Garantir Segurança Jurídica e Patrimonial</h2>
-                    <p>
-                        Atuo como perita avaliadora de imóveis, oferecendo laudos técnicos completos e com validade legal, elaborados com base em rigorosos critérios técnicos e normas da ABNT/NBR. Minhas avaliações atendem às exigências de processos judiciais e extrajudiciais, como inventários, partilhas, leilões, desapropriações e ações revisionais.
-                    </p>
-                </div>
-                <div class="laudos-top-icon">
-                    <img src="images/icone1.png" alt="Ícone de Laudo e Avaliação">
-                </div>
-            </div>
-        </div>
-        <div class="laudos-bottom">
-            <div class="container">
-                <h3>Meus Laudos Atendem a Diversas Finalidades:</h3>
-                <ul>
-                    <li>Leilões judiciais e extrajudiciais</li>
-                    <li>Execuções fiscais e penhoras</li>
-                    <li>Inventários, partilhas e divórcios</li>
-                    <li>Desapropriações e ações revisionais/renovatórias</li>
-                    <li>Avaliação para valor de mercado ou locação</li>
-                    <li>Imóveis residenciais, comerciais, industriais e rurais</li>
-                </ul>
-                <a href="#" class="btn-valorize">valorize seu patrimônio!</a>
-            </div>
-        </div>
-    </section>
+    /* Remove a inversão da seta no mobile */
+    .feature-item:nth-child(2) .arrow-icon img,
+    .feature-item:nth-child(4) .arrow-icon img {
+        transform: none;
+    }
 
-    <section class="confiabilidade-section">
-        <div class="container">
-            <div class="confiabilidade-header">
-                <h1>Laudos Judiciais e Extrajudiciais com<br>Confiabilidade e Validade Legal</h1>
-                <div class="header-box">
-                    <p>Abrange todos os produtos imobiliários em todo o território nacional, seja para venda, locação ou atualização patrimonial.</p>
-                </div>
-            </div>
-           <div class="features-grid">
-                <div class="feature-item">
-                    <div class="arrow-icon">
-                        <img src="images/seta.png" alt="Ícone de Seta">
-                    </div>
-                    <p>Ofereço um atendimento personalizado, com confidencialidade total, garantindo que todas as informações sejam tratadas com a máxima responsabilidade e seriedade.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="arrow-icon">
-                        <img src="images/seta.png" alt="Ícone de Seta">
-                    </div>
-                    <p>Abrange todos os produtos imobiliários em todo o território nacional, seja para venda, locação ou atualização patrimonial.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="arrow-icon">
-                        <img src="images/seta.png" alt="Ícone de Seta">
-                    </div>
-                    <p>A avaliação inicia-se com uma visita e vistoria minuciosa ao imóvel, seguida de uma análise mercadológica detalhada da região. O laudo é elaborado com base em dados precisos, estudos de mercado e informações colhidas durante o processo.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="arrow-icon">
-                        <img src="images/seta.png" alt="Ícone de Seta">
-                    </div>
-                    <p>O relatório final contém uma apresentação completa, com dados do imóvel, produtos similares, características da região, zoneamento, fotos, documentos relevantes e uma análise detalhada com a justificativa do valor.</p>
-                    </div>
-                </div>
-            </div>
-    </section>
+    /* Adicionar DENTRO de @media (max-width: 768px) { ... } */
 
-    <section class="expertise-section">
-        <div class="container">
-            <div class="info-card-wrapper">
-                <div class="info-card">
-                    <p>O processo de elaboração de Laudos de Avaliação de Imóveis é altamente técnico e atende integralmente às exigências da NBR 14653, partes 1, 2 e 3, da ABNT (Associação Brasileira de Normas Técnicas), garantindo a produção de um laudo confiável sobre o valor real de mercado.</p>
-                </div>
-            </div>
-            <div class="info-card-wrapper">
-                <div class="info-card blue-card">
-                    <h3>Minha experiência e expertise me capacitam a realizar Avaliações Imobiliárias com precisão, em diversas situações, incluindo:</h3>
-                    <div class="situations-container">
-                        <div class="situation-item"><span>Avaliação de Imóveis Comerciais</span></div>
-                        <div class="situation-item"><span>Avaliação de Imóveis Industriais e Galpões</span></div>
-                        <div class="situation-item"><span>Avaliação de Imóveis Rurais</span></div>
-                        <div class="situation-item"><span>Avaliação de Imóveis Residenciais</span></div>
-                        <div class="situation-item"><span>Avaliação de Terrenos</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="info-card-wrapper button-wrapper">
-                <a href="#" class="btn-solicitar">Solicitar um Orçamento</a>
-            </div>
-        </div>
-    </section>
+    /* --- Ajustes na Seção NBR e Expertise --- */
+    .expertise-section {
+        padding: 4rem 1.5rem;
+    }
 
-    <section class="etapas-section">
-        <div class="container">
-            <div class="etapa-coluna">
-                <h2>Levantamento</h2>
-                <div class="etapa-card">
-                    <img src="images/predios.png" alt="Ícone de Levantamento de Informações" class="etapa-icone">
-                    <p>Coleta detalhada das informações do imóvel ou terreno, incluindo documentos essenciais para uma análise precisa e fundamentada.</p>
-                </div>
-            </div>
-            <div class="etapa-coluna">
-                <h2>Vistoria Técnica</h2>
-                <div class="etapa-card">
-                    <img src="images/engrenagem.png" alt="Ícone de Vistoria Técnica" class="etapa-icone">
-                    <p>Inspeção física do bem, realizada por profissional qualificada, garantindo avaliação criteriosa e completa das características do imóvel.</p>
-                </div>
-            </div>
-            <div class="etapa-coluna">
-                <h2>Análise de Mercado</h2>
-                <div class="etapa-card">
-                    <img src="images/prancheta.png" alt="Ícone de Análise de Mercado" class="etapa-icone">
-                    <p>Pesquisa atualizada do mercado, assegurando que a avaliação reflita com precisão a realidade da região e do setor imobiliário.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    .info-card-wrapper::before {
+        top: 6px;
+        left: 6px;
+    }
 
-    <footer id="contato" class="main-footer">
-        <div class="container">
-            <div class="footer-logo-side">
-                <img src="images/logo-1.png" alt="Logo Janaína Pereira" class="footer-logo">
-            </div>
-            <div class="footer-contact-side">
-                <div class="contact-info">
-                    <p>janainapereira.perita@gmail.com •</p>
-                    <p>+55 (11) 9.7309-7621 •</p>
-                </div>
-                <div class="footer-button-wrapper">
-                    <a href="#" class="btn-footer-contact">Entre em Contato</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    .info-card p {
+        font-size: 16px;
+    }
 
-    <a href="https://wa.me/SEUNUMERO" class="whatsapp-fab" target="_blank" aria-label="Fale Conosco pelo WhatsApp">
-        <img src="images/zap.png" alt="Fale Conosco pelo WhatsApp">
-    </a>
+    .blue-card h3 {
+        font-size: 18px;
+    }
 
-    <script src="script.js"></script>
+    .situations-container {
+        gap: 1rem;
+    }
 
-</body>
-</html>
+    .situation-item {
+        width: 110px;
+        height: 110px;
+        font-size: 12px;
+    }
+
+    .button-wrapper {
+        margin-top: 4rem;
+    }
+
+    /* Adicionar DENTRO de @media (max-width: 768px) { ... } */
+
+    /* --- Ajustes na Seção Etapas da Avaliação --- */
+    .etapas-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .etapas-section .container {
+        flex-direction: column; /* Empilha as colunas */
+        gap: 3rem;
+    }
+
+    .etapa-coluna h2 {
+        font-size: 22px;
+    }
+
+    /* Adicionar DENTRO de @media (max-width: 768px) { ... } */
+
+    /* --- Ajustes no Rodapé --- */
+    .main-footer {
+        padding: 4rem 1.5rem;
+    }
+
+    /* Ajusta ou remove o corte diagonal no mobile */
+    .main-footer::after {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .main-footer .container {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .footer-logo-side, .footer-contact-side {
+        flex-basis: auto;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
+
