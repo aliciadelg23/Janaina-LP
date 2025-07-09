@@ -29,8 +29,12 @@ body {
     padding: 1rem 5%;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    position: relative;
-    z-index: 100;
+    
+    /* --- ALTERAÇÕES AQUI --- */
+    position: sticky; /* Faz o menu "grudar" */
+    top: 0;           /* Define que ele deve grudar no topo da tela */
+    width: 100%;      /* Garante que ocupe toda a largura */
+    z-index: 1000;    /* Um z-index alto para ficar sobre todo o conteúdo */
 }
 
 .logo img {
@@ -107,37 +111,79 @@ body {
 /* --- SEÇÃO HERO (PRINCIPAL) --- */
 /* ======================================================= */
 
+/* ======================================================= */
+/* --- SEÇÃO HERO COM SLIDER DE IMAGENS --- */
+/* ======================================================= */
+
+/* ======================================================= */
+/* --- SEÇÃO HERO (COM SLIDER E CORTE DIAGONAL) --- */
+/* ======================================================= */
+
+/* O container principal da seção */
 .hero {
-    position: relative;
+    position: relative; /* Essencial para o posicionamento dos elementos internos */
     min-height: 80vh;
-    background-image: url('images/ap.jpg');
-    background-size: cover;
-    background-position: 70% center;
+    background-color: #eef1f5; /* Cor de fundo de segurança */
 }
 
-.hero::before {
-    content: '';
+/* O conteúdo de texto da esquerda */
+.hero-content {
+    /* Este bloco fica por cima de tudo */
+    position: relative;
+    z-index: 2;
+
+    /* Define o tamanho e o fundo da área de texto */
+    width: 55%;
+    height: 80vh; /* Deve ter a mesma altura do .hero */
+    min-height: inherit;
+    background-color: #eef1f5;
+    
+    /* O truque do corte diagonal */
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+
+    /* Estilos de alinhamento do conteúdo interno */
+    padding: 6rem 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* O slider de imagens fica no fundo, ocupando toda a seção */
+.hero-image-slider {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 1; /* Fica atrás do .hero-content */
 }
 
-.hero-content {
+/* As regras abaixo (do slider e do texto) não precisam de alteração, 
+   mas devem estar presentes no seu CSS. */
+
+.hero-image-slider img {
     position: absolute;
     top: 0;
     left: 0;
-    width: 65%;
+    width: 100%;
     height: 100%;
-    background-color: #eef1f5;
-    clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
-    padding: 6rem 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 2; /* Assegura que o conteúdo fique na frente */
+    object-fit: cover;
+    opacity: 0;
+    animation: slideshow 16s infinite; /* Aumentei um pouco o tempo total */
+    animation-delay: calc(4s * var(--i));
+}
+
+.hero-image-slider img:nth-child(1) { --i: 0; }
+.hero-image-slider img:nth-child(2) { --i: 1; }
+.hero-image-slider img:nth-child(3) { --i: 2; }
+.hero-image-slider img:nth-child(4) { --i: 3; }
+
+@keyframes slideshow {
+    0%   { opacity: 0; transform: scale(1.05) rotate(1deg); }
+    8%   { opacity: 1; transform: scale(1) rotate(0deg); }
+    25%  { opacity: 1; transform: scale(1) rotate(0deg); }
+    33%  { opacity: 0; transform: scale(1.05) rotate(-1deg); }
+    100% { opacity: 0; }
 }
 
 .hero-content h1 {
@@ -174,6 +220,18 @@ body {
     font-weight: 500;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
     border-bottom: 3px solid #1d4ed8;
+}
+
+.tag {
+    background-color: #f0f0f0; /* Um cinza bem claro */
+    color: #334155;           /* Texto em um tom de cinza mais escuro */
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #2563eb; /* Borda azul para destaque */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border-bottom: none;
 }
 
 /*
@@ -565,7 +623,35 @@ body {
     transform: translateY(2px);
     box-shadow: 0 3px 0 #2d52a8;
 }
+/* Remova a estilização da lista ul antiga */
+/* .laudos-bottom ul { ... } */
+/* .laudos-bottom li { ... } */
 
+/* Adicione estas regras para o novo grid de finalidades */
+.finalidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    text-align: left;
+}
+
+.finalidade-item {
+    font-size: 18px;
+    color: #555;
+    padding-left: 30px; /* Espaço para o ícone */
+    position: relative;
+}
+
+/* Ícone de "check" antes de cada item */
+.finalidade-item::before {
+    content: '✓'; /* Você pode substituir por um SVG de ícone */
+    position: absolute;
+    left: 0;
+    color: #3867D6; /* Seu azul */
+    font-weight: bold;
+}
 /* ======================================================= */
 /* --- SEÇÃO CONFIABILIDADE E VALIDADE --- */
 /* ======================================================= */
@@ -653,7 +739,18 @@ body {
     padding-top: 1rem;
 }
 
+/* Adicione esta regra para criar um efeito de hover nos cards */
+.feature-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.2); /* Fundo levemente escuro para o texto se destacar */
+    padding: 1.5rem;
+    border-radius: 8px;
+}
 
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
 
 
 /* ======================================================= */
@@ -1330,5 +1427,80 @@ body {
         text-align: center;
         gap: 0.5rem;
     }
+
+    /* Adicione este código DENTRO de @media (max-width: 768px) { ... } */
+
+.hamburger-line {
+    /* Adicionamos uma transição para a animação ficar suave */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Adicione estas NOVAS regras DENTRO de @media (max-width: 768px) */
+
+/* Estilo para o botão 'X' de fechar */
+.btn-close-menu {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 300;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Estilo para a logo na base do menu */
+.mobile-menu-logo {
+    margin-top: auto; /* Truque de Flexbox para empurrar para baixo */
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.mobile-menu-logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Adicione este código DENTRO de @media (max-width: 768px) { ... } */
+
+/* Estilo especial para o botão de contato dentro do menu mobile */
+.nav-mobile .btn-contact {
+    background-color: transparent; /* Remove o fundo azul */
+    border: 2px solid #fff;       /* Adiciona uma borda branca */
+    color: #fff;                  /* Garante que o texto seja branco */
+}
+
+/* Opcional: Efeito hover para o botão vazado, para melhor feedback visual */
+.nav-mobile .btn-contact:hover {
+    background-color: #fff;       /* Fundo fica branco ao passar o mouse */
+    color: #3867D6;               /* Texto fica na cor azul do menu */
+}
+
+/* Adicione estas regras DENTRO de @media (max-width: 768px) */
+
+/* Altera o layout principal do hero para uma coluna */
+.hero {
+    flex-direction: column;
+    min-height: auto; /* Remove a altura mínima no mobile */
+}
+
+/* Garante que o conteúdo de texto ocupe toda a largura */
+.hero-content {
+    width: 100%;
+    position: static; /* Remove o posicionamento absoluto */
+    clip-path: none;  /* Remove o corte diagonal */
+    height: auto;
+    background-color: #eef1f5; /* Garante o fundo claro */
+    padding: 4rem 1.5rem;
+}
+
+/* Posiciona o slider abaixo do conteúdo */
+.hero-image-slider {
+    position: relative; /* Remove o posicionamento absoluto */
+    width: 100%;
+    height: 300px; /* Altura fixa para o slider no mobile, ajuste se necessário */
+}
 }
 
